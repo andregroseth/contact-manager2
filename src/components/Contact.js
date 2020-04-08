@@ -8,7 +8,7 @@ class Contact extends Component {
 
   onDeleteClick = () => {
     this.props.deleteClickHandler();
-  }
+  };
 
   render() {
     const { name, email, phone } = this.props.contact;
@@ -23,11 +23,11 @@ class Contact extends Component {
               this.setState({ showContactInfo: !this.state.showContactInfo })
             }
             className="fas fa-sort-down"
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           />
           <i
             className="fas fa-times"
-            style={{cursor: 'pointer', float: 'right', color: 'red' }}
+            style={{ cursor: "pointer", float: "right", color: "red" }}
             onClick={this.onDeleteClick}
           />
         </h4>
