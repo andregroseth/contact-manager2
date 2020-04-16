@@ -5,7 +5,7 @@ import Contacts from "./components/contacts/Contacts";
 import Header from "./components/layout/Header";
 import "./App.css";
 import { Provider } from "./context";
-import AddContact from './components/contacts/AddContact';
+import AddContact from "./components/contacts/AddContact";
 
 class App extends Component {
   render() {
