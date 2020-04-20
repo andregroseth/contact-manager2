@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class AddContact extends Component {
   constructor(props) {
@@ -14,18 +14,17 @@ class AddContact extends Component {
     const contact = {
       name: this.nameInput.current.value,
       email: this.emailInput.current.value,
-      phone: this.nameInput.current.value
-    }
+      phone: this.nameInput.current.value,
+    };
 
     console.log(contact);
-  }
-
+  };
 
   static defaultProps = {
-    name: 'Fred Smith',
-    email: 'fred@yahoo.com',
-    phone: '777-777-7777'
-  }
+    name: "Fred Smith",
+    email: "fred@yahoo.com",
+    phone: "777-777-7777",
+  };
 
   render() {
     const { name, email, phone } = this.props;
@@ -37,38 +36,39 @@ class AddContact extends Component {
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input 
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Name..."
-              defaultValue={name}
-              ref={this.nameInput}
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                placeholder="Enter Name..."
+                defaultValue={name}
+                ref={this.nameInput}
               />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input 
-              type="email"
-              className="form-control form-control-lg"
-              placeholder="Enter Email..."
-              defaultValue={email}
-              ref={this.emailInput}
+              <input
+                type="email"
+                className="form-control form-control-lg"
+                placeholder="Enter Email..."
+                defaultValue={email}
+                ref={this.emailInput}
               />
             </div>
             <div className="form-group">
               <label htmlFor="phone">Phone</label>
-              <input 
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Phone Number..."
-              defaultValue={phone}
-              ref={this.phoneInput}
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                placeholder="Enter Phone Number..."
+                defaultValue={phone}
+                ref={this.phoneInput}
               />
             </div>
             <input
-            type="submit" 
-            value="Add Contact" 
-            className="btn btn-light btn-block"/>
+              type="submit"
+              value="Add Contact"
+              className="btn btn-light btn-block"
+            />
           </form>
         </div>
       </div>
