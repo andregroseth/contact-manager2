@@ -1,7 +1,8 @@
 import { v4 as uuid } from "uuid";
-
 import React, { Component } from "react";
+
 import { Consumer } from "../../context";
+import TextInputGroup from "../layout/TextInputGroup";
 
 class AddContact extends Component {
   state = {
@@ -26,16 +27,13 @@ class AddContact extends Component {
 
     // Clear state
     this.setState({
-      name: '',
-      email: '',
-      phone: ''
-    })
+      name: "",
+      email: "",
+      phone: "",
+    });
   };
 
-  onNameChange = (e) => this.setState({ name: e.target.value });
-  onEmailChange = (e) => this.setState({ email: e.target.value });
-  onPhoneChange = (e) => this.setState({ phone: e.target.value });
-  //onChange = e => this.setState({ [e.target.name]: e.target.value});
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { name, email, phone } = this.state;
@@ -49,36 +47,28 @@ class AddContact extends Component {
               <div className="card-header">Add Contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Name..."
-                      value={name}
-                      onChange={this.onNameChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="email"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Email..."
-                      value={email}
-                      onChange={this.onEmailChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Phone Number..."
-                      value={phone}
-                      onChange={this.onPhoneChange}
-                    />
-                  </div>
+                  <TextInputGroup
+                    label="Name"
+                    name="name"
+                    placeholder="Enter Name"
+                    value={name}
+                    onChange={this.onChange}
+                  />
+                  <TextInputGroup
+                    label="Email"
+                    name="email"
+                    placeholder="Enter Email"
+                    value={email}
+                    onChange={this.onChange}
+                  />
+                  <TextInputGroup
+                    label="Phone"
+                    name="phone"
+                    placeholder="Enter Phone Number"
+                    value={phone}
+                    onChange={this.onChange}
+                  />
+
                   <input
                     type="submit"
                     value="Add Contact"
