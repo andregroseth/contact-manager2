@@ -18,21 +18,21 @@ class AddContact extends Component {
     const { name, email, phone } = this.state;
 
     // Check For Errors
-    if(name === '') {
-      this.setState({errors: {name: 'Name is required'}});
+    if (name === "") {
+      this.setState({ errors: { name: "Name is required" } });
       return;
     }
 
-    if(email === '') {
-      this.setState({errors: {email: 'Email is required'}});
+    if (email === "") {
+      this.setState({ errors: { email: "Email is required" } });
       return;
     }
 
-    if(phone === '') {
-      this.setState({errors: {phone: 'Phone number is required'}})
+    if (phone === "") {
+      this.setState({ errors: { phone: "Phone number is required" } });
       return;
     }
-    
+
     const newContact = {
       id: uuid(),
       name,
@@ -50,8 +50,7 @@ class AddContact extends Component {
       errors: {},
     });
 
-    this.props.history.push('/');
-
+    this.props.history.push("/");
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
